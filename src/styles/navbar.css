@@ -1,23 +1,36 @@
 .navbar {
-  background-color: rgb(255, 255, 255);
-  color: rgb(0, 0, 0);
+  background-color: aquamarine;
   border-width: 5px;
-  border-color: rgb(74, 118, 118);
+  border-color: #f4ac45;
   border-bottom-style: solid;
+  display: flex;
 }
 
 .navbar-logo {
   max-width: 200px;
+  max-height: 80px;
+  align-self: center;
+  border-radius: 80px;
+  padding: 0;
+  margin-left: 10px;
+  background-color: aquamarine;
 }
 
 .navbar-links {
-  margin: auto;
   list-style-type: none;
   max-width: 600px;
 }
 
-.navbar-links-items {
+.navbar-links-item {
+  color: rgb(0, 0, 0);
   margin: 0;
   padding: 10px;
   display: inline-block;
+  font-size: 20px;
+  font-family: "Segoe UI";
+  text-decoration: none;
+}
+
+.navbar-links-item:hover {
+  font-size: 21px;
 }
