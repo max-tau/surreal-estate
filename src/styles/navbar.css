@@ -1,0 +1,23 @@
+.navbar {
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  border-width: 5px;
+  border-color: rgb(74, 118, 118);
+  border-bottom-style: solid;
+}
+
+.navbar-logo {
+  max-width: 200px;
+}
+
+.navbar-links {
+  margin: auto;
+  list-style-type: none;
+  max-width: 600px;
+}
+
+.navbar-links-items {
+  margin: 0;
+  padding: 10px;
+  display: inline-block;
+}
