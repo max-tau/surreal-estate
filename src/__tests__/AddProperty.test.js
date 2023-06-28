@@ -12,11 +12,11 @@ describe("AddProperty", () => {
   it("contains a form with correct inputs and selects", () => {
     render(<AddProperty />);
     const textInputs = screen.queryAllByRole("textbox");
-    const numberInput = screen.getByRole("spinbutton");
+    const numberInputs = screen.queryAllByRole("spinbutton");
     const selectInputs = screen.queryAllByRole("combobox");
 
-    expect(textInputs).toHaveLength(4);
-    expect(numberInput).toBeInTheDocument();
+    expect(textInputs).toHaveLength(2);
+    expect(numberInputs).toHaveLength(3);
     expect(selectInputs).toHaveLength(2);
   });
 });

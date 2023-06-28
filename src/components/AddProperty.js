@@ -1,7 +1,11 @@
+/* eslint-disable no-console */
 import React, { useState } from "react";
+import axios from "axios";
 import "../styles/add-property.css";
 
 const AddProperty = () => {
+  axios.defaults.baseURL = "http://localhost:4000/api/v1";
+
   const initialState = {
     fields: {
       title: "",
@@ -14,9 +18,16 @@ const AddProperty = () => {
     },
   };
   const [fields, setFields] = useState(initialState.fields);
-  const handleAddProperty = (e) => {
+  const handleAddProperty = async (e) => {
     e.preventDefault();
-    console.log(fields);
+    await axios
+      .post("/PropertyListing", { ...fields })
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
   const handleFieldChange = (e) => {
     setFields({ ...fields, [e.target.name]: e.target.value });
@@ -44,8 +55,9 @@ const AddProperty = () => {
             <input
               className="add-property-input"
               placeholder="Number of bedrooms"
-              type="text"
+              type="number"
               id="bedrooms"
+              step="1"
               name="bedrooms"
               value={fields.bedrooms}
               onChange={handleFieldChange}
@@ -56,7 +68,8 @@ const AddProperty = () => {
             <input
               className="add-property-input"
               placeholder="Number of bathrooms"
-              type="text"
+              type="number"
+              step="1"
               id="bathrooms"
               name="bathrooms"
               value={fields.bathrooms}
