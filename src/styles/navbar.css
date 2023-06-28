@@ -1,9 +1,10 @@
 .navbar {
-  background-color: aquamarine;
+  background-color: #35524a;
   border-width: 5px;
   border-color: #f4ac45;
   border-bottom-style: solid;
   display: flex;
+  width: 100vw;
 }
 
 .navbar-logo {
@@ -13,7 +14,6 @@
   border-radius: 80px;
   padding: 0;
   margin-left: 10px;
-  background-color: aquamarine;
 }
 
 .navbar-links {
@@ -22,12 +22,12 @@
 }
 
 .navbar-links-item {
-  color: rgb(0, 0, 0);
+  color: #fdfffc;
   margin: 0;
   padding: 10px;
   display: inline-block;
   font-size: 20px;
-  font-family: "Segoe UI";
+  font-family: "Urbanist";
   text-decoration: none;
 }
 

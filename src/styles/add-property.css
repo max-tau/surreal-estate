@@ -1,0 +1,48 @@
+.subheading {
+  font-size: 30px;
+  font-weight: 50;
+  color: rgb(0, 0, 0);
+  margin-left: 90px;
+}
+
+.add-property {
+  padding: 10px;
+  margin-left: 10px;
+  max-width: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  align-self: center;
+}
+
+.add-property button {
+  max-width: fit-content;
+  margin-top: 10px;
+  border-radius: 80px;
+  align-self: center;
+}
+
+.add-property-input {
+  margin-top: 5px;
+  margin-left: 20px;
+  border-radius: 5px;
+  border-width: 1.5px;
+  border-style: solid;
+  box-sizing: content-box;
+  height: 17px;
+}
+
+.add-property select {
+  margin-top: 5px;
+  margin-left: 20px;
+  width: 145px;
+  padding: 1px 2px;
+  border-radius: 5px;
+  border-width: 1.5px;
+  border-style: solid;
+  box-sizing: content-box;
+}
+
+.add-property label {
+  flex: 1;
+}
