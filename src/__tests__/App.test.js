@@ -1,9 +1,16 @@
 import React from "react";
-import { render, screen } from "@testing-library/react";
+import { render } from "@testing-library/react";
+import { BrowserRouter } from "react-router-dom";
 import App from "../components/App";
 
-test("renders subheading", () => {
-  render(<App />);
-  const h2Element = screen.getByText(/Surreal Estate/i);
-  expect(h2Element).toBeInTheDocument();
+describe("App", () => {
+  it("renders components correctly", () => {
+    const { asFragment } = render(
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    );
+
+    expect(asFragment()).toMatchSnapshot();
+  });
 });
