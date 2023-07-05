@@ -9,7 +9,7 @@ import Sidebar from "./Sidebar";
 
 axios.defaults.baseURL = "http://localhost:4000/api/v1";
 
-const Properties = () => {
+const Properties = ({ userId }) => {
   const initialState = {
     alert: {
       message: "",
@@ -19,6 +19,15 @@ const Properties = () => {
   const [properties, setProperties] = useState([]);
   const [alert, setAlert] = useState(initialState.alert);
   const { search } = useLocation();
+  const handleSaveProperty = (propertyId) => {
+    axios
+      .post("/Favourite", {
+        propertyListing: propertyId,
+        fbUserId: userId,
+      })
+      .then(() => console.log("Property saved as favourite"))
+      .catch((err) => console.log(err));
+  };
 
   useEffect(() => {
     axios
@@ -35,7 +44,9 @@ const Properties = () => {
       <div className="property-card-grid">
         {properties.map((property) => (
           <PropertyCard
-            id={property.id}
+            key={property.id}
+            userId={userId}
+            _id={property.id}
             title={property.title}
             bedrooms={property.bedrooms}
             bathrooms={property.bathrooms}
@@ -43,6 +54,7 @@ const Properties = () => {
             city={property.city}
             type={property.type}
             email={property.email}
+            onSaveProperty={handleSaveProperty}
           />
         ))}
         {alert.message && (

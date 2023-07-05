@@ -4,7 +4,7 @@ import PropertyCard from "../components/PropertyCard";
 
 describe("Property card", () => {
   const validProps = {
-    key: 123456,
+    id: 123456,
     title: "2 bed flat for sale",
     bedrooms: 2,
     bathrooms: 1,
@@ -15,7 +15,7 @@ describe("Property card", () => {
   };
   render(
     <PropertyCard
-      key={validProps.key}
+      id={validProps.id}
       title={validProps.title}
       bedrooms={validProps.bedrooms}
       bathrooms={validProps.bathrooms}
@@ -26,26 +26,13 @@ describe("Property card", () => {
     />
   );
 
-  it("renders correct value for title prop", () => {
-    console.log(validProps.title);
+  it("renders correct value for props", () => {
     expect(screen.getByText("2 bed flat for sale")).toBeInTheDocument();
-  });
-  it("renders correct value for bedrooms prop", () => {
-    expect(screen.getByText(2)).toBeInTheDocument();
-  });
-  it("renders correct value for bathrooms prop", () => {
-    expect(screen.getByText(1)).toBeInTheDocument();
-  });
-  it("renders correct value for price prop", () => {
-    expect(screen.getByText(125000)).toBeInTheDocument();
-  });
-  it("renders correct value for city prop", () => {
+    expect(screen.getByText("2")).toBeInTheDocument();
+    expect(screen.getByText("1")).toBeInTheDocument();
+    expect(screen.getByText("125000")).toBeInTheDocument();
     expect(screen.getByText("Manchester")).toBeInTheDocument();
-  });
-  it("renders correct value for type prop", () => {
     expect(screen.getByText("Flat")).toBeInTheDocument();
-  });
-  it("renders correct value for email prop", () => {
     expect(screen.getByText("Email")).toHaveAttribute(
       "href",
       "mailto:mrs_hudson@bakerstreet.co.uk"

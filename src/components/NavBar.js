@@ -1,8 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import FacebookLogin from "react-facebook-login";
 import "../styles/navbar.css";
 
-const NavBar = () => {
+const NavBar = ({ onLogin, userId, onLogout }) => {
   return (
     <div className="navbar">
       <img
@@ -22,6 +23,19 @@ const NavBar = () => {
           </Link>
         </li>
       </ul>
+      {userId ? (
+        <button className="navbar-signout" type="submit" onClick={onLogout}>
+          Sign out
+        </button>
+      ) : (
+        <FacebookLogin
+          className="navbar-login"
+          appId="1253758218678052"
+          autoLoad
+          fields="name,email,picture"
+          callback={onLogin}
+        />
+      )}
     </div>
   );
 };

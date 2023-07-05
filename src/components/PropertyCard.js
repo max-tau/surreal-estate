@@ -2,7 +2,8 @@ import React from "react";
 import "../styles/property-card.css";
 
 const PropertyCard = ({
-  id,
+  userId,
+  _id,
   title,
   bedrooms,
   bathrooms,
@@ -10,9 +11,10 @@ const PropertyCard = ({
   city,
   type,
   email,
+  onSaveProperty,
 }) => {
   return (
-    <div className="property-card" key={id}>
+    <div className="property-card" key={_id}>
       <div className="property-card_image">
         <img src="https://picsum.photos/300/200" alt={`${title} property`} />
       </div>
@@ -39,6 +41,16 @@ const PropertyCard = ({
       <div className="property-card_email">
         <a href={`mailto:${email}`}>Email</a>
       </div>
+      {userId && (
+        <button
+          type="button"
+          onClick={() => {
+            onSaveProperty(_id);
+          }}
+        >
+          Save
+        </button>
+      )}
     </div>
   );
 };
