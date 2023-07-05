@@ -1,28 +1,34 @@
-.subheading {
+.add-property {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.add-property-subheading {
   font-size: 30px;
   font-weight: 50;
   color: rgb(0, 0, 0);
   margin-left: 90px;
 }
 
-.add-property {
+.add-property-form {
   padding: 10px;
   margin-left: 10px;
   max-width: fit-content;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  align-self: center;
 }
 
-.add-property button {
-  max-width: fit-content;
+.add-property-form button {
+  background-color: #fdfffc;
   margin-top: 10px;
-  border-radius: 80px;
-  align-self: center;
+  border: 2px outset #35524a;
+  border-radius: 5px;
+  padding: 0 25px;
 }
 
-.add-property-input {
+.add-property-form-input {
   margin-top: 5px;
   margin-left: 20px;
   border-radius: 5px;
@@ -32,7 +38,7 @@
   height: 17px;
 }
 
-.add-property select {
+.add-property-form select {
   margin-top: 5px;
   margin-left: 20px;
   width: 145px;
@@ -43,6 +49,6 @@
   box-sizing: content-box;
 }
 
-.add-property label {
+.add-property-form label {
   flex: 1;
 }

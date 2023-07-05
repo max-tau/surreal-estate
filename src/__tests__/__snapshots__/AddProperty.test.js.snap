@@ -2,21 +2,23 @@
 
 exports[`AddProperty renders component correctly 1`] = `
 <DocumentFragment>
-  <h2
-    class="subheading"
+  <div
+    class="add-property"
   >
-    Add Property
-  </h2>
-  <div>
+    <h2
+      class="add-property-subheading"
+    >
+      Add Property
+    </h2>
     <form
-      class="add-property"
+      class="add-property-form"
     >
       <label
         for="title"
       >
         Title
         <input
-          class="add-property-input"
+          class="add-property-form-input"
           id="title"
           name="title"
           placeholder="Property tagline"
@@ -29,7 +31,7 @@ exports[`AddProperty renders component correctly 1`] = `
       >
         Bedrooms
         <input
-          class="add-property-input"
+          class="add-property-form-input"
           id="bedrooms"
           name="bedrooms"
           placeholder="Number of bedrooms"
@@ -43,7 +45,7 @@ exports[`AddProperty renders component correctly 1`] = `
       >
         Bathrooms
         <input
-          class="add-property-input"
+          class="add-property-form-input"
           id="bathrooms"
           name="bathrooms"
           placeholder="Number of bathrooms"
@@ -57,7 +59,7 @@ exports[`AddProperty renders component correctly 1`] = `
       >
         Price (£)
         <input
-          class="add-property-input"
+          class="add-property-form-input"
           id="price"
           min="0.00"
           name="price"
@@ -72,7 +74,7 @@ exports[`AddProperty renders component correctly 1`] = `
       >
         Email
         <input
-          class="add-property-input"
+          class="add-property-form-input"
           id="email"
           name="email"
           placeholder="name12@example.com"
@@ -85,7 +87,7 @@ exports[`AddProperty renders component correctly 1`] = `
       >
         City
         <select
-          class="add-property-select"
+          class="add-property-form-select"
           id="city"
           name="city"
         >
@@ -116,7 +118,7 @@ exports[`AddProperty renders component correctly 1`] = `
       >
         Type
         <select
-          class="add-property-select"
+          class="add-property-form-select"
           id="type"
           name="type"
         >

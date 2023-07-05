@@ -1,0 +1,11 @@
+.properties-page {
+  display: grid;
+  grid-template-columns: 1fr 9fr;
+}
+
+.property-card-grid {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  padding: 20px;
+  gap: 10px 5px;
+}
