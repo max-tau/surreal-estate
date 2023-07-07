@@ -35,13 +35,14 @@
   font-size: 21px;
 }
 
-.navbar span {
-  margin-left: 40vw;
+.navbar-login {
+  justify-self: flex-end;
+  display: flex;
+  align-items: flex-end;
 }
 
 .navbar-signout {
   max-height: 2em;
-  margin-left: 50vw;
   border-radius: 5px;
   background-color: #fdfffc;
   border: 2px outset #f4ac45;

@@ -39,10 +39,13 @@ const PropertyCard = ({
       <div className="property-card_city">{city}</div>
       <div className="property-card_type">{type}</div>
       <div className="property-card_email">
-        <a href={`mailto:${email}`}>Email</a>
+        <a className="email-link" href={`mailto:${email}`}>
+          Email
+        </a>
       </div>
       {userId && (
         <button
+          className="save-button"
           type="button"
           onClick={() => {
             onSaveProperty(_id);

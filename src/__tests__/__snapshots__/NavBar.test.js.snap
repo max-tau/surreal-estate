@@ -34,6 +34,12 @@ exports[`NavBar renders component correctly 1`] = `
         </a>
       </li>
     </ul>
+    <button
+      class="navbar-signout"
+      type="submit"
+    >
+      Sign out
+    </button>
   </div>
 </DocumentFragment>
 `;

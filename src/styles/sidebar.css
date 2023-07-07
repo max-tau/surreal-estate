@@ -26,13 +26,13 @@
 }
 
 .sidebar-search-input {
-  border: 1px solid #f4ac45;
+  border: 2px solid #f4ac45;
   border-radius: 5px;
 }
 
 .sidebar-search-button {
   background-color: #35524a;
-  border: 1px solid #f4ac45;
+  border: 2px solid #f4ac45;
   border-radius: 5px;
   margin-left: 5px;
 }

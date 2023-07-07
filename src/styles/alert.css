@@ -12,4 +12,7 @@
 
 .alert-error {
   background: #ff3333c8;
+  margin-top: 20px;
+  margin-right: 10px;
+  text-align: center;
 }

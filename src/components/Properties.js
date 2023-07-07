@@ -10,14 +10,7 @@ import Sidebar from "./Sidebar";
 axios.defaults.baseURL = "http://localhost:4000/api/v1";
 
 const Properties = ({ userId }) => {
-  const initialState = {
-    alert: {
-      message: "",
-      isSuccess: false,
-    },
-  };
   const [properties, setProperties] = useState([]);
-  const [alert, setAlert] = useState(initialState.alert);
   const { search } = useLocation();
   const handleSaveProperty = (propertyId) => {
     axios
@@ -34,33 +27,34 @@ const Properties = ({ userId }) => {
       .get(`/PropertyListing${search}`)
       .then(({ data }) => setProperties(data))
       .catch(() => {
-        setAlert({ message: "No properties found", isSuccess: false });
+        <Alert message="No properties found" isSuccess={false} />;
       });
   }, [search]);
 
   return (
     <div className="properties-page">
       <Sidebar />
-      <div className="property-card-grid">
-        {properties.map((property) => (
-          <PropertyCard
-            key={property.id}
-            userId={userId}
-            _id={property.id}
-            title={property.title}
-            bedrooms={property.bedrooms}
-            bathrooms={property.bathrooms}
-            price={property.price}
-            city={property.city}
-            type={property.type}
-            email={property.email}
-            onSaveProperty={handleSaveProperty}
-          />
-        ))}
-        {alert.message && (
-          <Alert message={alert.message} success={alert.isSuccess} />
-        )}
-      </div>
+      {properties.length === 0 ? (
+        <Alert message="No properties found" success={false} />
+      ) : (
+        <div className="property-card-grid">
+          {properties.map((property) => (
+            <PropertyCard
+              key={property.id}
+              userId={userId}
+              _id={property.id}
+              title={property.title}
+              bedrooms={property.bedrooms}
+              bathrooms={property.bathrooms}
+              price={property.price}
+              city={property.city}
+              type={property.type}
+              email={property.email}
+              onSaveProperty={handleSaveProperty}
+            />
+          ))}
+        </div>
+      )}
     </div>
   );
 };

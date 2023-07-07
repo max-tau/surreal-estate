@@ -28,13 +28,14 @@ const NavBar = ({ onLogin, userId, onLogout }) => {
           Sign out
         </button>
       ) : (
-        <FacebookLogin
-          className="navbar-login"
-          appId="1253758218678052"
-          autoLoad
-          fields="name,email,picture"
-          callback={onLogin}
-        />
+        <div className="navbar-login">
+          <FacebookLogin
+            appId="1253758218678052"
+            autoLoad
+            fields="name,email,picture"
+            callback={onLogin}
+          />
+        </div>
       )}
     </div>
   );

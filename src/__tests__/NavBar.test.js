@@ -1,14 +1,21 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 import NavBar from "../components/NavBar";
 
 describe("NavBar", () => {
+  const handleLogin = () => {
+    jest.fn();
+  };
+  const handleLogout = () => {
+    jest.fn();
+  };
+
   it("renders component correctly", () => {
     const { asFragment } = render(
-      <BrowserRouter>
-        <NavBar />
-      </BrowserRouter>
+      <Router>
+        <NavBar onLogin={handleLogin} userId={1} onLogout={handleLogout} />
+      </Router>
     );
 
     expect(asFragment()).toMatchSnapshot();
@@ -16,9 +23,9 @@ describe("NavBar", () => {
 
   it("contains an image with correct src", () => {
     render(
-      <BrowserRouter>
-        <NavBar />
-      </BrowserRouter>
+      <Router>
+        <NavBar onLogin={handleLogin} userId={1} onLogout={handleLogout} />
+      </Router>
     );
     const logo = screen.getByRole("img");
 
