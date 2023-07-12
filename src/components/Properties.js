@@ -12,13 +12,14 @@ axios.defaults.baseURL = "http://localhost:4000/api/v1";
 const Properties = ({ userId }) => {
   const [properties, setProperties] = useState([]);
   const { search } = useLocation();
+
   const handleSaveProperty = (propertyId) => {
     axios
       .post("/Favourite", {
         propertyListing: propertyId,
         fbUserId: userId,
       })
-      .then(() => console.log("Property saved as favourite"))
+      .then((response) => console.log(response))
       .catch((err) => console.log(err));
   };
 
@@ -40,9 +41,9 @@ const Properties = ({ userId }) => {
         <div className="property-card-grid">
           {properties.map((property) => (
             <PropertyCard
-              key={property.id}
+              key={property._id}
               userId={userId}
-              _id={property.id}
+              _id={property._id}
               title={property.title}
               bedrooms={property.bedrooms}
               bathrooms={property.bathrooms}

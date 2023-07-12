@@ -22,6 +22,13 @@ const NavBar = ({ onLogin, userId, onLogout }) => {
             Add a Property
           </Link>
         </li>
+        {userId ? (
+          <li className="navbar-links-item">
+            <Link className="navbar-links-item" to="/favourites">
+              View Favourites
+            </Link>
+          </li>
+        ) : null}
       </ul>
       {userId ? (
         <button className="navbar-signout" type="submit" onClick={onLogout}>
@@ -35,6 +42,12 @@ const NavBar = ({ onLogin, userId, onLogout }) => {
             fields="name,email,picture"
             callback={onLogin}
           />
+          {/* <Link className="navbar-links-item" to="/create-account">
+            Create Account
+          </Link>
+          <Link className="navbar-links-item" to="/sign-in">
+            Sign In
+          </Link> */}
         </div>
       )}
     </div>

@@ -1,5 +1,12 @@
 import React from "react";
 import "../styles/property-card.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faBed,
+  faBath,
+  faEnvelope,
+  faHeart,
+} from "@fortawesome/free-solid-svg-icons";
 
 const PropertyCard = ({
   userId,
@@ -14,44 +21,36 @@ const PropertyCard = ({
   onSaveProperty,
 }) => {
   return (
-    <div className="property-card" key={_id}>
+    <div className="property-card">
       <div className="property-card_image">
         <img src="https://picsum.photos/300/200" alt={`${title} property`} />
       </div>
-      <div className="property-card_title">{title}</div>
-      <div className="property-card_bedrooms">
-        <img
-          className="icon"
-          src="https://cdn-icons-png.flaticon.com/128/2284/2284001.png"
-          alt="bedroom icon"
-        />
-        {bedrooms}
+      <div className="property-card_item">{title}</div>
+      <div className="property-card_item">
+        <FontAwesomeIcon icon={faBed} />
+        &nbsp;{bedrooms}
       </div>
-      <div className="property-card_bathrooms">
-        <img
-          className="icon"
-          src="https://cdn-icons-png.flaticon.com/128/259/259973.png"
-          alt="bathroom icon"
-        />
-        {bathrooms}
+      <div className="property-card_item">
+        <FontAwesomeIcon icon={faBath} />
+        &nbsp;&nbsp;{bathrooms}
       </div>
-      <div className="property-card_price">{price}</div>
-      <div className="property-card_city">{city}</div>
-      <div className="property-card_type">{type}</div>
+      <div className="property-card_item">{price}</div>
+      <div className="property-card_item">{city}</div>
+      <div className="property-card_item">{type}</div>
       <div className="property-card_email">
         <a className="email-link" href={`mailto:${email}`}>
-          Email
+          <FontAwesomeIcon icon={faEnvelope} />
+          &nbsp;Email
         </a>
       </div>
       {userId && (
         <button
           className="save-button"
           type="button"
-          onClick={() => {
-            onSaveProperty(_id);
-          }}
+          onClick={() => onSaveProperty(_id)}
         >
-          Save
+          <FontAwesomeIcon icon={faHeart} />
+          &nbsp;Save
         </button>
       )}
     </div>
