@@ -36,6 +36,7 @@ const Sidebar = () => {
     <div className="sidebar">
       <form className="sidebar-search" onSubmit={handleSearch}>
         <input
+          id="sidebar-search-input"
           type="text"
           placeholder="Search by property title"
           className="sidebar-search-input"

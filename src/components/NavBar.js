@@ -36,16 +36,10 @@ const NavBar = ({ onLogin, userId, onLogout }) => {
         </button>
       ) : (
         <div className="navbar-login">
-          <FacebookLogin
-            appId="1253758218678052"
-            autoLoad
-            fields="name,email,picture"
-            callback={onLogin}
-          />
-          <Link className="navbar-links-item" to="/create-account">
+          <Link className="navbar-links-auth" to="/create-account">
             Create Account
           </Link>
-          <Link className="navbar-links-item" to="/sign-in">
+          <Link className="navbar-links-auth" to="/sign-in">
             Sign In
           </Link>
         </div>

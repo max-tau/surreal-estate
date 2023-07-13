@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import "../styles/App.css";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useNavigate } from "react-router-dom";
+import { signOut } from "firebase/auth";
+import { auth } from "../config/firebase";
 import NavBar from "./NavBar";
 import Properties from "./Properties";
 import AddProperty from "./AddProperty";
@@ -13,10 +15,14 @@ const App = () => {
   const handleLogin = (response) => {
     setUserId(response.userID);
   };
+  const navigate = useNavigate();
   const handleLogout = () => {
-    window.FB.logout(() => {
-      window.location = "/";
-    });
+    signOut(auth)
+      .then(() => {
+        setUserId("");
+        navigate("/");
+      })
+      .catch((err) => console.log(err));
   };
 
   return (
@@ -26,8 +32,11 @@ const App = () => {
         <Route path="/" element={<Properties userId={userId} />} />
         <Route path="add-property" element={<AddProperty />} />
         <Route path="favourites" element={<Favourites />} />
-        <Route path="create-account" element={<CreateAccount />} />
-        <Route path="sign-in" element={<SignIn />} />
+        <Route
+          path="create-account"
+          element={<CreateAccount onSetUser={setUserId} />}
+        />
+        <Route path="sign-in" element={<SignIn onSetUser={setUserId} />} />
       </Routes>
     </div>
   );
