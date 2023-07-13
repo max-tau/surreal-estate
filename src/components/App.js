@@ -5,8 +5,8 @@ import NavBar from "./NavBar";
 import Properties from "./Properties";
 import AddProperty from "./AddProperty";
 import Favourites from "./Favourites";
-// import CreateAccount from "./CreateAccount";
-// import SignIn from "./SignIn";
+import CreateAccount from "./CreateAccount";
+import SignIn from "./SignIn";
 
 const App = () => {
   const [userId, setUserId] = useState("");
@@ -26,8 +26,8 @@ const App = () => {
         <Route path="/" element={<Properties userId={userId} />} />
         <Route path="add-property" element={<AddProperty />} />
         <Route path="favourites" element={<Favourites />} />
-        {/* <Route path="create-account" element={<CreateAccount />} />
-        <Route path="sign-in" element={<SignIn />} /> */}
+        <Route path="create-account" element={<CreateAccount />} />
+        <Route path="sign-in" element={<SignIn />} />
       </Routes>
     </div>
   );

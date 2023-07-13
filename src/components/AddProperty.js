@@ -5,7 +5,7 @@ import "../styles/add-property.css";
 import Alert from "./Alert";
 
 const AddProperty = () => {
-  axios.defaults.baseURL = "htttp://localhost:4000/api/v1";
+  axios.defaults.baseURL = "http://localhost:4000/api/v1";
 
   const initialState = {
     fields: {
