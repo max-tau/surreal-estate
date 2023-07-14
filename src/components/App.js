@@ -12,9 +12,6 @@ import SignIn from "./SignIn";
 
 const App = () => {
   const [userId, setUserId] = useState("");
-  const handleLogin = (response) => {
-    setUserId(response.userID);
-  };
   const navigate = useNavigate();
   const handleLogout = () => {
     signOut(auth)
@@ -27,7 +24,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <NavBar onLogin={handleLogin} onLogout={handleLogout} userId={userId} />
+      <NavBar onLogout={handleLogout} userId={userId} />
       <Routes>
         <Route path="/" element={<Properties userId={userId} />} />
         <Route path="add-property" element={<AddProperty />} />

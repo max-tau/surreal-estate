@@ -1,9 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import FacebookLogin from "react-facebook-login";
 import "../styles/navbar.css";
 
-const NavBar = ({ onLogin, userId, onLogout }) => {
+const NavBar = ({ userId, onLogout }) => {
   return (
     <div className="navbar">
       <img

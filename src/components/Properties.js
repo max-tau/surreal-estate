@@ -3,8 +3,8 @@ import { useLocation } from "react-router-dom";
 import axios from "axios";
 import PropertyCard from "./PropertyCard";
 import Alert from "./Alert";
-import "../styles/properties.css";
 import Sidebar from "./Sidebar";
+import "../styles/properties.css";
 
 axios.defaults.baseURL = "http://localhost:4000/api/v1";
 
@@ -20,17 +20,19 @@ const Properties = ({ userId }) => {
   const [properties, setProperties] = useState([]);
   const { search } = useLocation();
 
-  const handleSaveProperty = (propertyId) => {
-    axios
+  const handleSaveProperty = async (propertyId) => {
+    await axios
       .post("/Favourite", {
         propertyListing: propertyId,
         fbUserId: userId,
       })
-      .then(() =>
-        setAlert({
-          message: "Property successfully saved to Favourites",
-          isSuccess: true,
-        })
+      .then(
+        () =>
+          setAlert({
+            message: "Property successfully saved to Favourites",
+            isSuccess: true,
+          }),
+        console.log(alert)
       )
       .catch(() =>
         setAlert({

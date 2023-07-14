@@ -17,36 +17,43 @@ const SignIn = ({ onSetUser }) => {
     signInWithEmailAndPassword(auth, userLogin.email, userLogin.password)
       .then((userCredential) => {
         const { user } = userCredential;
-        onSetUser(user);
+        onSetUser(user.uid);
         navigate("/");
+        console.log(user);
       })
       .catch((err) => console.log(err));
   };
   return (
-    <form>
-      <label htmlFor="sign-in_email-input">
-        Email
-        <input
-          onChange={handleChange}
-          value={userLogin.email}
-          type="email"
-          name="email"
-          id="sign-in_email-input"
-        />
-      </label>
-      <label htmlFor="sign-in_password-input">
-        <input
-          onChange={handleChange}
-          value={userLogin.password}
-          type="password"
-          name="password"
-          id="sign-in_password-input"
-        />
-      </label>
-      <button id="sign-in_button" type="button" onClick={handleCreateAccount}>
-        Submit
-      </button>
-    </form>
+    <div className="auth">
+      <h2 className="auth-subheading">Sign In</h2>
+      <form className="auth-form">
+        <label htmlFor="sign-in_email-input">
+          Email
+          <input
+            className="auth-form_input"
+            onChange={handleChange}
+            value={userLogin.email}
+            type="email"
+            name="email"
+            id="sign-in_email-input"
+          />
+        </label>
+        <label htmlFor="sign-in_password-input">
+          Password
+          <input
+            className="auth-form_input"
+            onChange={handleChange}
+            value={userLogin.password}
+            type="password"
+            name="password"
+            id="sign-in_password-input"
+          />
+        </label>
+        <button id="sign-in_button" type="button" onClick={handleCreateAccount}>
+          Submit
+        </button>
+      </form>
+    </div>
   );
 };
 

@@ -1,8 +1,8 @@
 /* eslint-disable no-console */
 import React, { useState } from "react";
 import axios from "axios";
-import "../styles/add-property.css";
 import Alert from "./Alert";
+import "../styles/add-property.css";
 
 const AddProperty = () => {
   axios.defaults.baseURL = "http://localhost:4000/api/v1";
